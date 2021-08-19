@@ -1,8 +1,7 @@
-"""Bulk fetch content from HTTP endpoints."""
+"""Script event loop initialization."""
 import asyncio
 from typing import List
 
-from .data import get_list_of_urls
 from .fetcher import run
 
 

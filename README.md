@@ -9,7 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/asyncio-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-blueprint-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/asyncio-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-blueprint-tutorial/network)
 
-Asynchronous HTTP Requests with asyncio, aiohttp, & aiofiles.
+Make asynchronous HTTP requests and write to disk using **asyncio**, **aiohttp**, & **aiofiles**.
 
 * **Tutorial**: https://hackersandslackers.com/concurrency-asyncio-aiohttp-aiofiles/
 * **Demo**: TBD

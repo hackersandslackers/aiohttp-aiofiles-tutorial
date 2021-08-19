@@ -1,18 +1,18 @@
-"""Collection of URLs to parse."""
+"""Parse list of URLs from a local CSV (for demonstration)."""
 import csv
 from typing import List
 
 from config import BASE_DIR
 
 
-def get_list_of_urls() -> List[str]:
+def parse_urls() -> List[str]:
     """
-    Read list of URLs from CSV file.
+    Parse URLs from CSV file into a Python list.
 
     :returns: List[str]
     """
     urls = []
-    with open(f"{BASE_DIR}/asyncio_tutorial/urls.csv", newline="") as f:
+    with open(f"{BASE_DIR}/urls.csv", newline="") as f:
         reader = csv.reader(f)
         for line in reader:
             urls.append(line[0])

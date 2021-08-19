@@ -1,4 +1,4 @@
-"""Fetch and save pages asynchronously."""
+"""Fetch and save HTML pages asynchronously."""
 import asyncio
 from typing import List
 
@@ -35,8 +35,8 @@ async def queue_and_execute_tasks(session: ClientSession, urls: List[str]):
     for i, url in enumerate(urls):
         task = asyncio.create_task(fetch_url(session, url, i, len(urls)))
         tasks.append(task)
-    result = await asyncio.gather(*tasks)
-    return result
+    await asyncio.gather(*tasks)
+    LOGGER.success(f"Successfully saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`")
 
 
 async def fetch_url(session, url: str, count: int, total_count: int):
@@ -56,7 +56,7 @@ async def fetch_url(session, url: str, count: int, total_count: int):
                 async with aiofiles.open(filename, mode="wb+") as f:
                     await f.write(text)
                     await f.close()
-                    LOGGER.info(f"Fetching {count} of {total_count}: {url}")
+                    LOGGER.info(f"Fetching {count + 1} of {total_count}: {url}")
     except InvalidURL as e:
         LOGGER.error(f"Unable to fetch invalid URL `{url}`: {e}")
     except ClientError as e:
