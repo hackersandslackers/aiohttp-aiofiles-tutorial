@@ -1,7 +1,7 @@
 """Script entry point."""
-from asyncio_tutorial import bulk_http_fetcher
-from config import URLS
+from asyncio_tutorial import bulk_task_runner, get_list_of_urls
 
-if __name__ == '__main__':
-    bulk_http_fetcher(URLS)
+urls = get_list_of_urls()
 
+if __name__ == "__main__":
+    bulk_task_runner(urls)

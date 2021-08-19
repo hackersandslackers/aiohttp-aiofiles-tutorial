@@ -4,8 +4,14 @@ from sys import stdout
 from loguru import logger as custom_logger
 
 
-def formatter(log):
-    """Format log colors based on level."""
+def formatter(log: dict) -> str:
+    """
+    Format log colors based on level.
+
+    :param dict log: Dictionary containing log level, details, etc.
+
+    :returns: str
+    """
     if log["level"].name == "SUCCESS":
         return (
             "<fg #aad1f7>{time:MM-DD-YYYY HH:mm:ss}</fg #aad1f7> | "
@@ -32,8 +38,12 @@ def formatter(log):
         )
 
 
-def create_logger():
-    """Create custom logger."""
+def create_logger() -> custom_logger:
+    """
+    Create custom logger.
+
+    :returns: custom_logger
+    """
     custom_logger.remove()
     custom_logger.add(stdout, colorize=True, format=formatter)
     return custom_logger

@@ -129,6 +129,7 @@ dmypy.json
 
 # Data
 data.json
+pages/*
 
 # MacOS
 .DS_Store

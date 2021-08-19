@@ -18,7 +18,7 @@ keywords = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python ="^3.9"
 aiohttp = "*"
 asyncio = "*"
 aiofiles = "*"
@@ -33,7 +33,7 @@ isort = "*"
 flake8 = "^3.9.0"
 
 [tool.poetry.scripts]
-run = "asgi:app"
+run = "main:bulk_task_runner"
 
 [tool.poetry.urls]
 issues = "https://github.com/hackersandslackers/asyncio-tutorial/issues"

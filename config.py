@@ -1,4 +1,5 @@
-URLS = [
-    "https://hackersandslackers.com",
-    "https://hackersandslackers.com/google-bigquery-python/"
-]
+"""Configuration."""
+from os import path
+
+# Set base directory of project
+BASE_DIR = path.abspath(path.dirname(__file__))
