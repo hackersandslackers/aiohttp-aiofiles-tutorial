@@ -1,3 +1,4 @@
+"""Collection of URLs to parse."""
 import csv
 from typing import List
 

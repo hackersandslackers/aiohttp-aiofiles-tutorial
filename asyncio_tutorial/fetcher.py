@@ -4,8 +4,8 @@ from typing import List
 
 import aiofiles
 from aiohttp import ClientError, ClientSession, InvalidURL
-from config import BASE_DIR
 
+from config import HTML_EXPORT_DIR
 from log import LOGGER
 
 
@@ -52,7 +52,7 @@ async def fetch_url(session, url: str, count: int, total_count: int):
         async with session.get(url) as response:
             if response.status == 200:
                 text = await response.read()
-                filename = f"{BASE_DIR}/pages/{url.split('/')[-2]}.html"
+                filename = f"{HTML_EXPORT_DIR}/{url.split('/')[-2]}.html"
                 async with aiofiles.open(filename, mode="wb+") as f:
                     await f.write(text)
                     await f.close()
