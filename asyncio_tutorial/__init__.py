@@ -2,7 +2,7 @@
 import asyncio
 from typing import List
 
-from .fetcher import run
+from .fetcher import create_and_execute_tasks
 
 
 def bulk_task_runner(urls: List[str]):
@@ -11,6 +11,4 @@ def bulk_task_runner(urls: List[str]):
 
     :param List[str] urls: URLs to fetch.
     """
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(run(urls))
-    loop.close()
+    asyncio.run(create_and_execute_tasks(urls))
