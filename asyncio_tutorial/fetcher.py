@@ -49,14 +49,15 @@ async def fetch_url(session, url: str, count: int, total_count: int):
     :param int total_count: Total URL count.
     """
     try:
-        async with session.get(url) as response:
-            if response.status == 200:
-                text = await response.read()
-                filename = f"{HTML_EXPORT_DIR}/{url.split('/')[-2]}.html"
-                async with aiofiles.open(filename, mode="wb+") as f:
-                    await f.write(text)
-                    await f.close()
-                    LOGGER.info(f"Fetching {count + 1} of {total_count}: {url}")
+        async with session.get(url) as resp:
+            text = await resp.read()
+            filename = f"{HTML_EXPORT_DIR}/{url.split('/')[-2]}.html"
+            async with aiofiles.open(filename, mode="wb+") as f:
+                LOGGER.info(
+                    f"Response code {resp.status} for URL {count + 1} of {total_count}: {url}"
+                )
+                await f.write(text)
+                await f.close()
     except InvalidURL as e:
         LOGGER.error(f"Unable to fetch invalid URL `{url}`: {e}")
     except ClientError as e:
