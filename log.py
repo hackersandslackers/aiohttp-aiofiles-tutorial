@@ -1,4 +1,4 @@
-"""Custom logger configuration."""
+"""Create custom logger."""
 from sys import stdout
 
 from loguru import logger as custom_logger

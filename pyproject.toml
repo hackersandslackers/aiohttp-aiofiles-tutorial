@@ -26,10 +26,9 @@ loguru = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
-mock = "*"
 mypy = "*"
-black = "^20.8b1"
-isort = "*"
+black = "^21.7b0"
+isort = "5.9.3"
 flake8 = "^3.9.0"
 
 [tool.poetry.scripts]

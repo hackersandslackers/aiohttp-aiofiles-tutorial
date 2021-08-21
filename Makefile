@@ -31,8 +31,7 @@ all help:
 
 .PHONY: run
 run: env
-	if [[ "$CURDIR" == *"$/var/www"* ]]; then service $(PROJECT_NAME) start; else $(LOCAL_PYTHON) asgi.py; fi
-
+	python3 -m main.py
 
 .PHONY: install
 install:

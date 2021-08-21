@@ -1,8 +1,8 @@
-"""Parse list of URLs from a local CSV (for demonstration)."""
+"""Parse list of URLs from a local CSV."""
 import csv
 from typing import List
 
-from config import BASE_DIR
+from config import CSV_FILEPATH
 
 
 def parse_urls() -> List[str]:
@@ -12,7 +12,7 @@ def parse_urls() -> List[str]:
     :returns: List[str]
     """
     urls = []
-    with open(f"{BASE_DIR}/urls.csv", newline="") as f:
+    with open(CSV_FILEPATH, newline="") as f:
         reader = csv.reader(f)
         for line in reader:
             urls.append(line[0])

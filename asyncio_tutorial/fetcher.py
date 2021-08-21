@@ -53,11 +53,11 @@ async def fetch_and_save_url(session, url: str, count: int, total_count: int):
     try:
         async with session.get(url) as resp:
             text = await resp.read()
+            LOGGER.info(
+                f"Response code {resp.status} for URL {count + 1} of {total_count}: {url}"
+            )
             filename = f"{HTML_EXPORT_DIR}/{url.split('/')[-2]}.html"
             async with aiofiles.open(filename, mode="wb+") as f:
-                LOGGER.info(
-                    f"Response code {resp.status} for URL {count + 1} of {total_count}: {url}"
-                )
                 await f.write(text)
                 await f.close()
     except InvalidURL as e:
