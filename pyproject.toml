@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "asyncio_tutorial"
 version = "0.1.0"
-description = "Asyncio tutorial."
-authors = ["Todd Birchard <toddbirchard@gmail.com>"]
-maintainers = ["Todd Birchard <toddbirchard@gmail.com>"]
+description = "Asynchronous Python demo using Asyncio."
+authors = ["Todd Birchard <todd@hackersandslackers.com>"]
+maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/hackersandslackers/asyncio-tutorial/"
 repository = "https://github.com/hackersandslackers/asyncio-tutorial/"
-documentation = "https://github.com/hackersandslackers/asyncio-tutorial/"
+documentation = "https://hackersandslackers.com/concurrency-asyncio-aiohttp-aiofiles/"
 keywords = [
   "Asyncio",
   "Aiohttp",
@@ -22,6 +22,9 @@ python ="^3.9"
 aiohttp = "*"
 asyncio = "*"
 aiofiles = "*"
+aiodns = "^3.0.0"
+cchardet = "^2.1.7"
+brotlipy = "^0.7.0"
 loguru = "*"
 
 [tool.poetry.dev-dependencies]
@@ -32,7 +35,7 @@ isort = "5.9.3"
 flake8 = "^3.9.0"
 
 [tool.poetry.scripts]
-run = "main:bulk_task_runner"
+run = "main:init_script"
 
 [tool.poetry.urls]
 issues = "https://github.com/hackersandslackers/asyncio-tutorial/issues"

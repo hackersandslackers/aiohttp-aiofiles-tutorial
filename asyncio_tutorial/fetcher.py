@@ -1,44 +1,9 @@
 """Fetch and save HTML pages asynchronously."""
-import asyncio
-from asyncio import Task
-from typing import List
-
 import aiofiles
 from aiohttp import ClientError, ClientSession, InvalidURL
 
-from config import HTML_EXPORT_DIR, HTML_HEADERS
-from log import LOGGER
-
-
-async def create_and_execute_tasks(urls: List[str]):
-    """
-    Open async HTTP session & execute created tasks.
-
-    :param List[str] urls: URLs to fetch responses from.
-    """
-
-    async with ClientSession(headers=HTML_HEADERS) as session:
-        tasks = await create_tasks(session, urls)
-        await asyncio.gather(*tasks)
-        LOGGER.success(
-            f"Successfully saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`"
-        )
-
-
-async def create_tasks(session: ClientSession, urls: List[str]) -> List[Task]:
-    """
-    Create asyncio tasks to be executed.
-
-    :param ClientSession session: Async HTTP requests session.
-    :param List[str] urls: Resource URLs to fetch.
-
-    :returns: List[Task]
-    """
-    tasks = []
-    for i, url in enumerate(urls):
-        task = asyncio.create_task(fetch_and_save_url(session, url, i, len(urls)))
-        tasks.append(task)
-    return tasks
+from asyncio_tutorial.logger import LOGGER
+from config import HTML_EXPORT_DIR
 
 
 async def fetch_and_save_url(session, url: str, count: int, total_count: int):

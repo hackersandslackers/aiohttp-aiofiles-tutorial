@@ -7,15 +7,16 @@ Manage $(PROJECT_NAME). Usage:
 
 make run        - Run $(PROJECT_NAME).
 make install    - Create virtual env, install dependencies, and run project.
-make update     - Update pip dependencies via Poetry and output requirements.txt.
+make deploy     - Install and run script by running `make install` and `make run` in succession.
+make update     - Update pip dependencies via Poetry and export output to requirements.txt.
 make format     - Format code with Python's `Black` library.
-make lint       - Check code formatting with flake8.
+make lint       - Check code formatting with `flake8`.
 make clean      - Remove cached files and lock files.
 endef
 export HELP
 
 
-.PHONY: run restart deploy update format lint clean help
+.PHONY: run install deploy update format lint clean help
 
 requirements: .requirements.txt
 env: ./.venv/bin/activate
@@ -31,15 +32,21 @@ all help:
 
 .PHONY: run
 run: env
-	python3 -m main.py
+	python3 main.py
+
 
 .PHONY: install
 install:
-	make clean
 	if [ ! -d "./.venv" ]; then python3 -m venv $(VIRTUAL_ENVIRONMENT); fi
 	. .venv/bin/activate
 	$(LOCAL_PYTHON) -m pip install --upgrade pip setuptools wheel
 	$(LOCAL_PYTHON) -m pip install -r requirements.txt
+
+
+.PHONY: deploy
+deploy:
+	make install
+	make run
 
 
 .PHONY: update

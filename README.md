@@ -17,17 +17,16 @@ Make asynchronous HTTP requests and write to disk using **asyncio**, **aiohttp**
 
 # Getting Started
 
-Get set up locally in one step:
+Set up and run this script locally via a single command.
 
 ### Installation
 
-Get up and running with `make deploy`:
+Get up and running by cloning this repository and running `make deploy`:
 
 ```shell
 $ git clone https://github.com/hackersandslackers/asyncio-tutorial.git
 $ cd asyncio-tutorial
-$ make install
-$ make run
+$ make deploy
 ``` 
 
 -----
