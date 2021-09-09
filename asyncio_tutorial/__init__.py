@@ -11,7 +11,7 @@ from data import URLS
 from config import HTML_EXPORT_DIR, HTML_HEADERS
 
 
-async def create_and_execute_tasks():
+async def init_script():
     """Open async HTTP session & execute created tasks."""
     async with ClientSession(headers=HTML_HEADERS) as session:
         tasks = await create_tasks(session, URLS)
