@@ -1,14 +1,21 @@
-"""Script entry point."""
+"""Event loop initialization."""
+import asyncio
 from typing import List
 
-from .loop import create_and_execute_tasks
-from .reader import parse_urls
+from aiohttp import ClientSession
+
+from asyncio_tutorial.logger import LOGGER
+from asyncio_tutorial.tasks import create_tasks
+
+from data import URLS
+from config import HTML_EXPORT_DIR, HTML_HEADERS
 
 
-async def init_script(urls: List[str]):
-    """
-    Create an event loop to execute a function per argument.
-
-    :param List[str] urls: URLs to fetch.
-    """
-    await create_and_execute_tasks(urls)
+async def create_and_execute_tasks():
+    """Open async HTTP session & execute created tasks."""
+    async with ClientSession(headers=HTML_HEADERS) as session:
+        tasks = await create_tasks(session, URLS)
+        await asyncio.gather(*tasks)
+        LOGGER.success(
+            f"Successfully saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`"
+        )
