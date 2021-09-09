@@ -17,5 +17,5 @@ async def init_script():
         tasks = await create_tasks(session, URLS)
         await asyncio.gather(*tasks)
         LOGGER.success(
-            f"Successfully saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`"
+            f"Successfully saved {len(URLS)} HTML pages to `{HTML_EXPORT_DIR}`"
         )
