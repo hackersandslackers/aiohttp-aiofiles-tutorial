@@ -22,7 +22,7 @@ async def fetch_and_save_url(
         async with session.get(url) as resp:
             text = await resp.read()
             LOGGER.info(
-                f"Response code {resp.status} for URL {count + 1} of {total_count}: {url}"
+                f"Successfully fetched URL {count + 1} of {total_count}: {url}"
             )
             await write_html_file(url, text, directory)
     except InvalidURL as e:

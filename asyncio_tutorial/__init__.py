@@ -11,7 +11,6 @@ from config import HTML_EXPORT_DIR, HTML_HEADERS
 from data import parse_urls
 
 from .logger import LOGGER
-from .tasks import create_and_execute_tasks
 
 
 async def init_script():
@@ -19,12 +18,10 @@ async def init_script():
     urls = parse_urls()
     async with ClientSession(headers=HTML_HEADERS) as session:
         tasks = await create_tasks(session, urls, HTML_EXPORT_DIR)
-        inspect_loop(tasks)
         await asyncio.gather(*tasks)
         LOGGER.success(
             f"Successfully saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`"
         )
-        inspect_loop(tasks)
 
 
 def inspect_loop(tasks: List[Task]):
