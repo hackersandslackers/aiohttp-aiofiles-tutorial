@@ -1,8 +1,11 @@
 """Script entry point."""
 from typing import List
 
-from .loop import create_and_execute_tasks
+from config import HTML_EXPORT_DIR, HTML_HEADERS
+
+from .logger import LOGGER
 from .reader import parse_urls
+from .tasks import create_and_execute_tasks
 
 
 async def init_script(urls: List[str]):
@@ -11,4 +14,7 @@ async def init_script(urls: List[str]):
 
     :param List[str] urls: URLs to fetch.
     """
-    await create_and_execute_tasks(urls)
+    fetcher_tasks = await create_and_execute_tasks(urls, HTML_HEADERS, HTML_EXPORT_DIR)
+    LOGGER.success(
+        f"Successfully saved {fetcher_tasks} HTML pages to `{HTML_EXPORT_DIR}`"
+    )
