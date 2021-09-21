@@ -1,4 +1,4 @@
-"""Parse list of URLs from a local CSV."""
+"""Parse a predetermined CSV of URLs into a Python list."""
 import csv
 from typing import List
 
@@ -7,7 +7,7 @@ from config import CSV_FILEPATH
 
 def parse_urls() -> List[str]:
     """
-    Parse URLs from CSV file into a Python list.
+    Parse a single-column CSV into a Python list of URLs.
 
     :returns: List[str]
     """

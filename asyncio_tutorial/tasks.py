@@ -5,20 +5,26 @@ from typing import List
 
 from aiohttp import ClientSession
 
+from asyncio_tutorial.logger import LOGGER
+
 from .fetcher import fetch_and_save_url
 
 
-async def create_and_execute_tasks(urls: List[str], headers: dict, directory: str):
+async def create_and_execute_tasks(
+    urls: List[str], headers: dict, directory: str, loop
+):
     """
     Open async HTTP session & execute created tasks.
 
+    :param loop:
     :param List[str] urls: URLs to fetch responses from.
     :param dict headers: HTTP headers to send requests with.
     :param str directory: Target directory to save fetched data.
     """
     async with ClientSession(headers=headers) as session:
         tasks = await create_tasks(session, urls, directory)
-        await asyncio.gather(*tasks)
+        loop.run_until_complete(*tasks)
+        loop.close()
 
 
 async def create_tasks(
