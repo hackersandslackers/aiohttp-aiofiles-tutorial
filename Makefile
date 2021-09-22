@@ -51,7 +51,6 @@ deploy:
 
 .PHONY: update
 update:
-	export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true
 	if [ ! -d "./.venv" ]; then python3 -m venv $(VIRTUAL_ENVIRONMENT); fi
 	.venv/bin/python3 -m pip install --upgrade pip setuptools wheel
 	poetry update
