@@ -1,4 +1,4 @@
-"""Event loop initialization."""
+"""Script initialization."""
 import asyncio
 from asyncio import Task
 from typing import List

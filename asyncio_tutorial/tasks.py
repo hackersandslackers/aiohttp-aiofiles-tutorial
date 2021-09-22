@@ -1,4 +1,4 @@
-"""Fetch and save HTML pages asynchronously."""
+"""Prepare tasks to be executed asynchronously."""
 import asyncio
 from asyncio import Task
 from typing import List

@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "asyncio_tutorial"
 version = "0.1.0"
-description = "Asynchronous Python demo using Asyncio."
+description = "Execute tasks asynchronously in Python using Asyncio."
 authors = ["Todd Birchard <todd@hackersandslackers.com>"]
 maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/hackersandslackers/asyncio-tutorial/"
 repository = "https://github.com/hackersandslackers/asyncio-tutorial/"
-documentation = "https://hackersandslackers.com/concurrency-asyncio-aiohttp-aiofiles/"
+documentation = "https://hackersandslackers.com/async-requests-with-aiohttp/"
 keywords = [
   "Asyncio",
   "Aiohttp",
@@ -41,5 +41,5 @@ run = "main:init_script"
 issues = "https://github.com/hackersandslackers/asyncio-tutorial/issues"
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry>=1.18"]
 build-backend = "poetry.masonry.api"

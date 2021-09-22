@@ -79,6 +79,7 @@ clean:
 	find . -name '__pycache__' -delete
 	find . -name 'poetry.lock' -delete
 	find . -name '*.log' -delete
+	find . -name '.DS_Store' -delete
 	find . -wholename 'logs/*.json' -delete
 	find . -wholename '.pytest_cache' -delete
 	find . -wholename '**/.pytest_cache' -delete
