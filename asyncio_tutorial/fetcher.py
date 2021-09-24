@@ -2,7 +2,7 @@
 from aiohttp import ClientError, ClientSession, InvalidURL
 
 from asyncio_tutorial.logger import LOGGER
-from asyncio_tutorial.writer import write_html_file
+from asyncio_tutorial.writer import write_fetched_file_locally
 
 
 async def fetch_and_save_url(
@@ -20,9 +20,14 @@ async def fetch_and_save_url(
     """
     try:
         async with session.get(url) as resp:
-            text = await resp.read()
+            body = await resp.read()
+            filetype = (
+                resp.headers.get("Content-Type")
+                .replace("; charset=UTF-8", "")
+                .replace("text/", "")
+            )
             LOGGER.info(f"Successfully fetched URL {i + 1} of {total_count}: {url}")
-            await write_html_file(url, text, directory)
+            await write_fetched_file_locally(url, body, filetype, directory)
     except InvalidURL as e:
         LOGGER.error(f"Unable to fetch invalid URL `{url}`: {e}")
     except ClientError as e:

@@ -11,7 +11,7 @@
 
 Make asynchronous HTTP requests and write to disk using **asyncio**, **aiohttp**, & **aiofiles**.
 
-* **Tutorial**: https://hackersandslackers.com/concurrency-asyncio-aiohttp-aiofiles/
+* **Tutorial**: https://hackersandslackers.com/async-requests-with-aiohttp/
 * **Demo**: TBD
 
 
