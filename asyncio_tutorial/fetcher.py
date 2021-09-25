@@ -26,8 +26,8 @@ async def fetch_and_save_url(
                 .replace("; charset=UTF-8", "")
                 .replace("text/", "")
             )
-            LOGGER.info(f"Successfully fetched URL {i + 1} of {total_count}: {url}")
             await write_file(url, body, filetype, directory)
+            LOGGER.info(f"Fetched URL {i + 1} of {total_count}: {url}")
     except InvalidURL as e:
         LOGGER.error(f"Unable to fetch invalid URL `{url}`: {e}")
     except ClientError as e:
