@@ -1,7 +1,5 @@
 """Script initialization."""
 import asyncio
-from asyncio import SelectorEventLoop, Task
-from typing import List
 
 from aiohttp import ClientSession
 
@@ -19,20 +17,19 @@ async def init_script():
     async with ClientSession(headers=HTML_HEADERS) as session:
         tasks = await create_tasks(session, urls, HTML_EXPORT_DIR)
         await asyncio.gather(*tasks)
-        loop = inspect_loop(tasks)
+        loop_status = await inspect_loop()
         LOGGER.success(
-            f"Saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`. Loop: {loop}"
+            f"Saved {len(urls)} HTML pages to `{HTML_EXPORT_DIR}`. {loop_status}"
         )
 
 
-def inspect_loop(tasks: List[Task]) -> SelectorEventLoop:
+async def inspect_loop() -> str:
     """
-    Get async loop info.
+    Get event loop info.
 
     :param: List[Task] tasks
 
-    :return: SelectorEventLoop
+    :return: str
     """
-    loop = tasks[0].get_loop()
-    LOGGER.info(f"Loop info: {loop}")
-    return loop
+    loop = asyncio.get_event_loop()
+    return f"Loop finished in {loop.time()} seconds."
