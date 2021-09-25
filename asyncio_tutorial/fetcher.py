@@ -21,11 +21,7 @@ async def fetch_and_save_url(
     try:
         async with session.get(url) as resp:
             body = await resp.read()
-            filetype = (
-                resp.headers.get("Content-Type")
-                .replace("; charset=UTF-8", "")
-                .replace("text/", "")
-            )
+            filetype = resp.content_type.replace("text/", "")
             await write_file(url, body, filetype, directory)
             LOGGER.info(f"Fetched URL {i + 1} of {total_count}: {url}")
     except InvalidURL as e:
