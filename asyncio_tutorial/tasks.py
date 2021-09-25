@@ -1,4 +1,4 @@
-"""Prepare tasks to be executed asynchronously."""
+"""Prepare tasks to be executed."""
 import asyncio
 from asyncio import Task
 from typing import List

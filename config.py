@@ -16,3 +16,8 @@ HTML_HEADERS = {
     "connection": "keep-alive",
     "accept": "*/*",
 }
+
+# Determine environment based on log folder
+ENVIRONMENT = "development"
+if path.isdir("/var/log/asyncio_tutorial"):
+    ENVIRONMENT = "production"

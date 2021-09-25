@@ -4,9 +4,7 @@ import aiofiles
 from .logger import LOGGER
 
 
-async def write_fetched_file_locally(
-    url: str, body: bytes, filetype: str, directory: str
-):
+async def write_file(url: str, body: bytes, filetype: str, directory: str):
     """
     Write contents of fetched URL to new file in local directory.
 

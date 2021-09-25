@@ -1,8 +1,8 @@
-"""Fetch and save HTML pages asynchronously."""
+"""Fetch and save files to disk asynchronously."""
 from aiohttp import ClientError, ClientSession, InvalidURL
 
 from asyncio_tutorial.logger import LOGGER
-from asyncio_tutorial.writer import write_fetched_file_locally
+from asyncio_tutorial.writer import write_file
 
 
 async def fetch_and_save_url(
@@ -27,7 +27,7 @@ async def fetch_and_save_url(
                 .replace("text/", "")
             )
             LOGGER.info(f"Successfully fetched URL {i + 1} of {total_count}: {url}")
-            await write_fetched_file_locally(url, body, filetype, directory)
+            await write_file(url, body, filetype, directory)
     except InvalidURL as e:
         LOGGER.error(f"Unable to fetch invalid URL `{url}`: {e}")
     except ClientError as e:

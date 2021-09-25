@@ -43,3 +43,7 @@ issues = "https://github.com/hackersandslackers/asyncio-tutorial/issues"
 [build-system]
 requires = ["poetry>=1.18"]
 build-backend = "poetry.masonry.api"
+
+[tool.isort]
+profile = "black"
+src_paths = ["asyncio_tutorial", "data", "main", "config"]
