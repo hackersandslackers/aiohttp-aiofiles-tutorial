@@ -8,7 +8,7 @@ BASE_DIR = path.abspath(path.dirname(__file__))
 CSV_FILEPATH = f"{BASE_DIR}/data/urls.csv"
 
 # Directory in which HTML export will be saved
-HTML_EXPORT_DIR = f"{BASE_DIR}/export/"
+EXPORT_DIR = f"{BASE_DIR}/export/"
 
 # Headers to be passed to async HTTP client session
 HTML_HEADERS = {
