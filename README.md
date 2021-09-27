@@ -1,4 +1,4 @@
-# Asyncio Tutorials
+# Python Asyncio Tutorials
 
 ![Python](https://img.shields.io/badge/Python-v^3.9-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
 ![Asyncio](https://img.shields.io/badge/Asyncio-v^3.4.3-blue.svg?longCache=true&logo=python&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
@@ -9,6 +9,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/hackersandslackers/asyncio-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-blueprint-tutorial/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/asyncio-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-blueprint-tutorial/network)
 
+![Asyncio](https://raw.githubusercontent.com/hackersandslackers/asyncio-tutorial/master/.github/96C20F51-485C-4B54-9FEB-4C0CA5C4ABEC.jpeg)
 
 **Source code demonstrating asynchronous Python for the corresponding Hackersandslackers posts.**
 
