@@ -1,7 +1,7 @@
 """Write to disk asynchronously."""
 import aiofiles
 
-from .logger import LOGGER
+from asyncio_tutorial.logger import LOGGER
 
 
 async def write_file(url: str, body: bytes, filetype: str, directory: str):

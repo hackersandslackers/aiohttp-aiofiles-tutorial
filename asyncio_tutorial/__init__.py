@@ -1,35 +1,12 @@
-"""Script initialization."""
+"""Demonstrate Parts 1 and 2 of Hackersandslackers Asyncio tutorial series"""
 import asyncio
 
-from aiohttp import ClientSession
-
 from asyncio_tutorial.logger import LOGGER
-from asyncio_tutorial.tasks import create_tasks
-from config import EXPORT_DIR, HTML_HEADERS
-from data import parse_urls
 
-from .logger import LOGGER
+from .part_I_asyncio_intro import intro_tutorial
+from .part_II_aiohttp_aiofiles import aiohttp_aiofiles_tutorial
 
 
-async def init_script():
-    """Open async HTTP session & execute created tasks."""
-    urls = parse_urls()
-    async with ClientSession(headers=HTML_HEADERS) as session:
-        tasks = await create_tasks(session, urls, EXPORT_DIR)
-        await asyncio.gather(*tasks)
-        await inspect_loop()
-        LOGGER.success(
-            f"Saved {len(urls)} files to `{EXPORT_DIR}`"
-        )
-
-
-async def inspect_loop() -> str:
-    """
-    Get event loop info.
-
-    :param: List[Task] tasks
-
-    :return: str
-    """
-    loop = asyncio.get_event_loop()
-    return LOGGER.info(f"Loop finished in {loop.time()} seconds.")
+def init_script():
+    asyncio.run(intro_tutorial())
+    asyncio.run(aiohttp_aiofiles_tutorial())

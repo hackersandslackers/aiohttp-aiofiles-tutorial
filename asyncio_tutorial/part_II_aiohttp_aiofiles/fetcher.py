@@ -2,7 +2,8 @@
 from aiohttp import ClientError, ClientSession, InvalidURL
 
 from asyncio_tutorial.logger import LOGGER
-from asyncio_tutorial.writer import write_file
+
+from .writer import write_file
 
 
 async def fetch_and_save_url(
