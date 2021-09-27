@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
        make install
-       pip install flake8
+       pip install flake8 pytest black isort
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
