@@ -10,7 +10,7 @@
 [![GitHub Forks](https://img.shields.io/github/forks/hackersandslackers/asyncio-tutorial.svg?style=flat-square&colorA=4c566a&logo=GitHub&colorB=ebcb8b)](https://github.com/hackersandslackers/flask-blueprint-tutorial/network)
 
 
-Source code demonstrating asynchronous Python for the corresponding Hackersandslackers posts.
+**Source code demonstrating asynchronous Python for the corresponding Hackersandslackers posts.**
 
 ### Part I
 
@@ -25,11 +25,7 @@ Make asynchronous HTTP requests and write to disk using **asyncio**, **aiohttp**
 https://hackersandslackers.com/async-requests-with-aiohttp/
 
 
-# Getting Started
-
-Set up and run this script locally via a single command.
-
-### Installation
+## Getting Started
 
 Get up and running by cloning this repository and running `make deploy`:
 
