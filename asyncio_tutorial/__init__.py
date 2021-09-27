@@ -9,4 +9,5 @@ from .part_II_aiohttp_aiofiles import aiohttp_aiofiles_tutorial
 
 def init_script():
     asyncio.run(intro_tutorial())
+    LOGGER.info("-------------------------------------------")
     asyncio.run(aiohttp_aiofiles_tutorial())
