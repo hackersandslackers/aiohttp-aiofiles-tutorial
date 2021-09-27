@@ -1,7 +1,7 @@
 import pytest
 from typing import List
 
-from data import parse_urls
+from data.parser import parse_urls
 
 
 def test_parse_urls():
