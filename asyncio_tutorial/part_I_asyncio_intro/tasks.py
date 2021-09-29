@@ -2,8 +2,6 @@
 import asyncio
 from asyncio import Task
 
-from asyncio_tutorial.logger import LOGGER
-
 
 async def create_task(coroutine) -> Task:
     """
@@ -13,5 +11,4 @@ async def create_task(coroutine) -> Task:
 
     :returns: Task
     """
-    LOGGER.info(type(coroutine))
     return asyncio.create_task(coroutine)
