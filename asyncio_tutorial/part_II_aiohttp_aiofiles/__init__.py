@@ -17,11 +17,10 @@ async def aiohttp_aiofiles_tutorial():
     async with ClientSession(headers=HTML_HEADERS) as session:
         tasks = await create_tasks(session, urls, EXPORT_DIR)
         await asyncio.gather(*tasks)
-        await inspect_loop()
         LOGGER.success(f"Saved {len(urls)} files to `{EXPORT_DIR}`")
 
 
-async def inspect_loop() -> str:
+async def inspect_loop():
     """
     Get event loop info.
 
@@ -30,4 +29,5 @@ async def inspect_loop() -> str:
     :return: str
     """
     loop = asyncio.get_event_loop()
-    return LOGGER.info(f"Loop finished in {loop.time()} seconds.")
+    LOGGER.info(f"Loop finished in {loop.time()} seconds.")
+
