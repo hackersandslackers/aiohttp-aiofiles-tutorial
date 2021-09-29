@@ -1,4 +1,4 @@
-"""Create a Future (callback): an action to be taken when loop is completed."""
+"""Future which executes an action when loop is completed."""
 import asyncio
 from asyncio import Future
 
@@ -7,7 +7,7 @@ from asyncio_tutorial.logger import LOGGER
 
 def register_future() -> Future:
     """
-    Create a Future to log when loop is completed.
+    Create a Future which triggers a callback when loop is completed.
 
     :returns: Future
     """
@@ -19,11 +19,11 @@ def register_future() -> Future:
 
 def loop_completed(result: str):
     """
-    Callback to be called when loop is complete.
+    Callback function fired when loop is complete.
 
-    :param str result: Simple string describing the state of the loop
+    :param str result: String describing the state of the loop
     """
     LOGGER.success(
         f"Loop completed with result: {result} \
-    \n-------------------------------------------------"
+        \n--------------------------------------"
     )

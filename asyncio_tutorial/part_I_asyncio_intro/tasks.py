@@ -1,4 +1,4 @@
-"""Create task from provided coroutine."""
+"""Create task from coroutine which displays a value after a delay."""
 import asyncio
 from asyncio import Task
 

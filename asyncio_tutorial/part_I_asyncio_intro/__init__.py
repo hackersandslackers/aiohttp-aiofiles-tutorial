@@ -1,4 +1,4 @@
-"""Simple script to create and execute tasks in a loop"""
+"""Create and execute asynchronous tasks in a loop."""
 import asyncio
 
 from asyncio_tutorial.logger import LOGGER
@@ -10,7 +10,7 @@ from .tasks import create_task
 
 
 async def asyncio_intro_tutorial():
-    """Simple demonstration of a async script lifecycle"""
+    """Demo of an asynchronous script's lifecycle."""
     LOGGER.info(f"Asyncio tutorial Part I: Intro to Asyncio.")
     tasks = []
     future = register_future()
