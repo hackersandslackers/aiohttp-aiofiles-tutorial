@@ -1,10 +1,7 @@
 """Custom logger."""
-from os import path
 from sys import stdout
 
 from loguru import logger as custom_logger
-
-from config import ENVIRONMENT
 
 
 def formatter(log: dict) -> str:
@@ -49,14 +46,6 @@ def create_logger() -> custom_logger:
     """
     custom_logger.remove()
     custom_logger.add(stdout, colorize=True, format=formatter)
-    if ENVIRONMENT == "production":
-        # Datadog JSON logs
-        custom_logger.add(
-            "/var/log/asyncio_tutorial/info.json",
-            format=formatter,
-            rotation="500 MB",
-            compression="zip",
-        )
     return custom_logger
 
 

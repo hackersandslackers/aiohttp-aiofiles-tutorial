@@ -1,4 +1,4 @@
-"""Future which executes an action when loop is completed."""
+"""Execute an action upon loop completion with Futures."""
 import asyncio
 from asyncio import Future
 

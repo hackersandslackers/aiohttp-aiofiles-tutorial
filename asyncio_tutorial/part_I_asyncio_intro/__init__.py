@@ -12,11 +12,11 @@ from .tasks import create_task
 async def asyncio_intro_tutorial():
     """Demo of an asynchronous script's lifecycle."""
     LOGGER.info(f"Asyncio tutorial Part I: Intro to Asyncio.")
-    tasks = []
+    task_list = []
     future = register_future()
     for i in range(3):
         task = await create_task(simple_coroutine(i, delay=1))
-        tasks.append(task)
+        task_list.append(task)
     inspect_event_loop()
-    await asyncio.gather(*tasks)
+    await asyncio.gather(*task_list)
     future.set_result("Done")

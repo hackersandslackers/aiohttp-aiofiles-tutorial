@@ -1,4 +1,4 @@
-# Python Asyncio Tutorials
+# Python Asyncio Tutorial
 
 ![Python](https://img.shields.io/badge/Python-v^3.9-blue.svg?logo=python&longCache=true&logoColor=white&colorB=5e81ac&style=flat-square&colorA=4c566a)
 ![Asyncio](https://img.shields.io/badge/Asyncio-v^3.4.3-blue.svg?longCache=true&logo=python&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
@@ -21,7 +21,7 @@ https://hackersandslackers.com/python-concurrency-asyncio/
 
 ### Part II
 
-Make asynchronous HTTP requests and write to disk using **asyncio**, **aiohttp**, & **aiofiles**.
+Make asynchronous HTTP requests and write to disk using [**asyncio**](https://docs.python.org/3/library/asyncio.html), [**aiohttp**](https://docs.aiohttp.org/en/stable/), & [**aiofiles**](https://github.com/Tinche/aiofiles).
 
 https://hackersandslackers.com/async-requests-with-aiohttp/
 
