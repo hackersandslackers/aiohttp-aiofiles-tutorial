@@ -1,5 +1,6 @@
 """Demonstrate Parts 1 and 2 of Hackersandslackers Asyncio tutorial series"""
 import asyncio
+import time
 
 from asyncio_tutorial.logger import LOGGER
 
@@ -14,5 +15,6 @@ def init_script():
     1. Intro to Async Python: https://hackersandslackers.com/python-concurrency-asyncio/
     2. Intro to Async Python: https://hackersandslackers.com/async-requests-with-aiohttp/
     """
-    asyncio.run(asyncio_intro_tutorial())
-    asyncio.run(aiohttp_aiofiles_tutorial())
+    start_time = time.perf_counter()
+    asyncio.run(asyncio_intro_tutorial(start_time))
+    asyncio.run(aiohttp_aiofiles_tutorial(start_time))

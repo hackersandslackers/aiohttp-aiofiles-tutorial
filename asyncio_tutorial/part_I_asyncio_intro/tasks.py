@@ -1,7 +1,7 @@
 """Create task from coroutine which displays a value after a delay."""
-from typing import Callable
 import asyncio
 from asyncio import Task
+from typing import Callable
 
 
 async def create_task(coroutine: Callable) -> Task:

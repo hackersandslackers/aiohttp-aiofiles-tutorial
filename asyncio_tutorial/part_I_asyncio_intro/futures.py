@@ -21,9 +21,9 @@ def loop_completed(result: str):
     """
     Callback function fired when loop is complete.
 
-    :param str result: String describing the state of the loop
+    :param str result: Message describing the state of the loop & its execution time.
     """
     LOGGER.success(
-        f"Loop completed with result: {result} \
+        f"{result} \
         \n--------------------------------------"
     )

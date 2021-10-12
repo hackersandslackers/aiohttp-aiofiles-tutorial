@@ -16,4 +16,3 @@ HTML_HEADERS = {
     "connection": "keep-alive",
     "accept": "*/*",
 }
-
