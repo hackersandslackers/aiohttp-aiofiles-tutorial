@@ -12,10 +12,16 @@ def formatter(log: dict) -> str:
 
     :returns: str
     """
+    if log["level"].name == "INFO":
+        return (
+            "<fg #aad1f7>{time:HH:mm:ss A}</fg #aad1f7> | "
+            "<fg #cfe2f3>{level}</fg #cfe2f3>: "
+            "<light-white>{message}</light-white> \n"
+        )
     if log["level"].name == "SUCCESS":
         return (
             "<fg #aad1f7>{time:HH:mm:ss A}</fg #aad1f7> | "
-            "<light-green>{level}</light-green>: "
+            "<fg #85de83>{level}</fg #85de83>: "
             "<light-white>{message}</light-white> \n"
         )
     if log["level"].name == "WARNING":

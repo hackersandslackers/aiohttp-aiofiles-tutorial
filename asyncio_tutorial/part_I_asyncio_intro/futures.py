@@ -23,6 +23,4 @@ def loop_completed(result: str):
 
     :param str result: Result of the loop & its execution time.
     """
-    LOGGER.success(
-        f"{result}\n--------------------------------------"
-    )
+    LOGGER.success(f"{result}\n--------------------------------------")

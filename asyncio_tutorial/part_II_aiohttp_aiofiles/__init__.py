@@ -13,7 +13,7 @@ from .loops import inspect_event_loop
 from .tasks import create_tasks
 
 
-async def aiohttp_aiofiles_tutorial(start_time):
+async def aiohttp_aiofiles_tutorial(start_time: float):
     """
     Open async HTTP session & execute created tasks.
 
