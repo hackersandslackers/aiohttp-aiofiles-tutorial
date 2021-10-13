@@ -17,8 +17,8 @@ async def asyncio_intro_tutorial(start_time: float):
     :param float start_time: Counter representing the time the script was initialized.
     """
     LOGGER.info(f"Asyncio tutorial Part I: Intro to Asyncio.")
-    task_list = []
     future = register_future()
+    task_list = []
     for i in range(3):
         task = await create_task(simple_coroutine(i, delay=1))
         task_list.append(task)
