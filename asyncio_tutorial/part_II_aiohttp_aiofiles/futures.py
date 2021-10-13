@@ -19,8 +19,8 @@ def register_future() -> Future:
 
 def loop_completed(result: str):
     """
-    Callback to be called when loop is complete.
+    Callback to be executed when loop is complete.
 
-    :param str result: Simple string describing the state of the loop
+    :param str result: Result of the loop & its execution time.
     """
     LOGGER.success(result)
