@@ -19,10 +19,8 @@ async def create_tasks(session: ClientSession, urls: List[str], output_file: Asy
 
     :returns: List[Task]
     """
-    tasks = []
-    i = 0
-    for url in urls:
+    task_list = []
+    for i, url in enumerate(urls):
         task = asyncio.create_task(fetch_url_and_save_title(session, url, output_file, len(urls), i))
-        tasks.append(task)
-        i += 1
-    return tasks
+        task_list.append(task)
+    return task_list
