@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "asyncio_tutorial"
+name = "Async HTTP Requests with Aiohttp & Aiofiles"
 version = "0.1.0"
-description = "Execute tasks asynchronously in Python using Asyncio."
+description = "Handle thousands of HTTP requests, disk writes, and other I/O-bound tasks with Python's quintessential async libraries."
 authors = ["Todd Birchard <todd@hackersandslackers.com>"]
 maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/hackersandslackers/asyncio-tutorial/"
 repository = "https://github.com/hackersandslackers/asyncio-tutorial/"
-documentation = "https://hackersandslackers.com/async-requests-with-aiohttp/"
+documentation = "https://hackersandslackers.com/async-requests-aiohttp-aiofiles/"
 keywords = [
   "Asyncio",
   "Aiohttp",
@@ -25,14 +25,16 @@ aiofiles = "*"
 aiodns = "^3.0.0"
 cchardet = "^2.1.7"
 brotlipy = "^0.7.0"
+bs4 = "*"
 loguru = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
 mypy = "*"
-black = "^21.9b0"
-isort = "5.9.3"
-flake8 = "^3.9.2"
+black = "^21.12b0"
+isort = "5.10.1"
+flake8 = "^4.0.1"
+pylint = "*"
 
 [tool.poetry.scripts]
 run = "main:init_script"
@@ -41,9 +43,12 @@ run = "main:init_script"
 issues = "https://github.com/hackersandslackers/asyncio-tutorial/issues"
 
 [build-system]
-requires = ["poetry>=1.18"]
+requires = ["poetry>=1.1.12"]
 build-backend = "poetry.masonry.api"
 
 [tool.isort]
 profile = "black"
-src_paths = ["asyncio_tutorial", "data", "main", "config"]
+src_paths = ["asyncio_aiohttp_aiofiles_tutorial"]
+
+[tool.black]
+line-length = 120
