@@ -30,5 +30,4 @@ async def get_html_page_title(html_body: str, url: str) -> str:
     :param str url: URL associated with the extracted HTML.
     """
     soup = BeautifulSoup(html_body, "html.parser")
-    return f"{soup.title.string.replace(',', '')}, {url}"
-
+    return f"{soup.title.string.replace(',', '')}, {url},"
