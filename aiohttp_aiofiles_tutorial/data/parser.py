@@ -1,4 +1,4 @@
-"""Parse a predetermined CSV of URLs into a Python list."""
+"""Parse a local CSV into a Python list of URLs."""
 import csv
 from typing import List
 

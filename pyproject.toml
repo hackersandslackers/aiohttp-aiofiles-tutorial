@@ -51,4 +51,4 @@ profile = "black"
 src_paths = ["asyncio_aiohttp_aiofiles_tutorial"]
 
 [tool.black]
-line-length = 120
+line-length = 100

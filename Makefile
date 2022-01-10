@@ -12,6 +12,7 @@ make update     - Update pip dependencies via Poetry and export output to requir
 make format     - Format code with Python's `Black` library.
 make lint       - Check code formatting with `flake8`.
 make clean      - Remove cached files and lock files.
+
 endef
 export HELP
 
@@ -80,8 +81,9 @@ clean:
 	find . -name '*.log' -delete
 	find . -name '.DS_Store' -delete
 	find . -wholename 'logs/*.json' -delete
-	find . -wholename '.pytest_cache' -delete
+	find . -wholename './.pytest_cache' -delete
+	find . -wholename './.venv' -delete
 	find . -wholename '**/.pytest_cache' -delete
 	find . -wholename './logs/*.json' -delete
 	find . -wholename './logs' -delete
-	find . -wholename '*.html' -delete
+	find . -wholename './export/*.csv' -delete
