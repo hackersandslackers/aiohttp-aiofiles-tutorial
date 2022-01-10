@@ -6,8 +6,8 @@ authors = ["Todd Birchard <todd@hackersandslackers.com>"]
 maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/hackersandslackers/asyncio-tutorial/"
-repository = "https://github.com/hackersandslackers/asyncio-tutorial/"
+homepage = "https://github.com/hackersandslackers/aiohttp-aiofiles-tutorial/"
+repository = "https://github.com/hackersandslackers/aiohttp-aiofiles-tutorial/"
 documentation = "https://hackersandslackers.com/async-requests-aiohttp-aiofiles/"
 keywords = [
   "Asyncio",
@@ -40,7 +40,7 @@ pylint = "*"
 run = "main:init_script"
 
 [tool.poetry.urls]
-issues = "https://github.com/hackersandslackers/asyncio-tutorial/issues"
+issues = "https://github.com/hackersandslackers/aiohttp-aiofiles-tutorial/issues"
 
 [build-system]
 requires = ["poetry>=1.1.12"]
