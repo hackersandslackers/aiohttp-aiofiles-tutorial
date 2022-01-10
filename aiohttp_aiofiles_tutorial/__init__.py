@@ -4,7 +4,7 @@ import time
 from time import perf_counter as timer
 
 import aiofiles
-from aiofiles.threadpool.text import AsyncTextIOWrapper
+from aiofiles.threadpool.text import AsyncTextIOWrapper as AsyncIOFile
 from aiohttp import ClientSession
 from config import EXPORT_FILE, HTML_HEADERS
 from logger import LOGGER
@@ -24,11 +24,11 @@ async def init_script():
     LOGGER.success(f"Executed {__name__} in {time.perf_counter() - start_time:0.2f} seconds.")
 
 
-async def create_and_execute_tasks(outfile: AsyncTextIOWrapper):
+async def create_and_execute_tasks(outfile: AsyncIOFile):
     """
     Open async HTTP session & execute created tasks.
 
-    :param AsyncTextIOWrapper outfile: Filepath of local .csv file to write to.
+    :param AsyncIOFile outfile: Path of local file to write to.
     """
     async with ClientSession(headers=HTML_HEADERS) as session:
         task_list = await create_tasks(session, urls, outfile)
