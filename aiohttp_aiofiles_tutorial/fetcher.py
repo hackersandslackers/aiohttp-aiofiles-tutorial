@@ -20,6 +20,8 @@ async def fetch_url_and_save_title(
     """
     try:
         async with session.get(url) as resp:
+            if resp.status != 200:
+                pass
             html = await resp.text()
             await write_to_outfile(html, url, outfile, total_count, i)
     except InvalidURL as e:

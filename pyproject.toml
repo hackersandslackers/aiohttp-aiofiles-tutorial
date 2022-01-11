@@ -30,6 +30,7 @@ loguru = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
+pytest-asyncio = "*"
 mypy = "*"
 black = "^21.12b0"
 isort = "5.10.1"
