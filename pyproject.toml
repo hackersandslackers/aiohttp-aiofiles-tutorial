@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "Async HTTP Requests with Aiohttp & Aiofiles"
 version = "0.1.0"
-description = "Handle thousands of HTTP requests, disk writes, and other I/O-bound tasks with Python's quintessential async libraries."
+description = "Handle mass HTTP requests, disk writes, and other I/O-bound tasks with Python's quintessential async libraries."
 authors = ["Todd Birchard <todd@hackersandslackers.com>"]
 maintainers = ["Todd Birchard <todd@hackersandslackers.com>"]
 license = "MIT"
@@ -49,7 +49,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.isort]
 profile = "black"
-src_paths = ["asyncio_aiohttp_aiofiles_tutorial"]
+src_paths = ["aiohttp_aiofiles_tutorial"]
 
 [tool.black]
 line-length = 100
