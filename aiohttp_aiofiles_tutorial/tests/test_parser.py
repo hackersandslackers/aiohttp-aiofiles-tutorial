@@ -1,11 +1,13 @@
 """Test metadata parser accuracy with local HTML file."""
 import aiofiles
 import pytest
-from aiohttp_aiofiles_tutorial.parser import parse_html_page_data
+import pytest_asyncio
 from config import BASE_DIR
 
+from aiohttp_aiofiles_tutorial.parser import parse_html_page_data
 
-@pytest.fixture
+
+@pytest_asyncio.fixture
 async def sample_page_metadata():
     """Expected metadata to be returned from parsing `intro_to_asyncio.html`"""
     title = "Intro to Asynchronous Python with Asyncio"
@@ -25,3 +27,4 @@ async def test_parse_html_page_data(sample_page_metadata):
         url = "https://hackersandslackers.com/intro-to-asyncio-concurrency/"
         metadata = await parse_html_page_data(html, url)
         assert metadata == sample_page_metadata
+        await file.close()

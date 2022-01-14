@@ -23,13 +23,15 @@ async def parse_html_page_data(html: str, url: str) -> str:
             .replace("'", "`")
         )
         primary_tag = soup.head.select_one("meta[property='article:tag']").get("content")
-        published_at = soup.head.select_one("meta[property='article:published_time']").get(
-            "content"
-        ).split("T")[0]
+        published_at = (
+            soup.head.select_one("meta[property='article:published_time']")
+            .get("content")
+            .split("T")[0]
+        )
         if primary_tag is None:
             primary_tag = ""
         return f"{title}, {description}, {primary_tag}, {url}, {published_at}"
     except ValueError as e:
-        LOGGER.error(f"Parsing failed for {url}: {e}")
+        LOGGER.error(f"ValueError occurred when parsing html for {url}: {e}")
     except Exception as e:
-        LOGGER.error(f"Parsing failed for {url}: {e}")
+        LOGGER.error(f"Parsing failed when parsing html for {url}: {e}")

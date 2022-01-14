@@ -13,8 +13,8 @@ def parse_urls_from_csv(filepath: str) -> List[str]:
     """
     urls = []
     with open(filepath, newline="") as f:
-        reader = csv.reader(f)
+        reader = csv.DictReader(f)
         for line in reader:
-            urls.append(line[0])
+            urls.append(line["url"])
 
     return urls

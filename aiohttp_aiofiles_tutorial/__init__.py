@@ -9,7 +9,7 @@ from aiohttp import ClientSession
 from config import EXPORT_FILE, HTML_HEADERS
 from logger import LOGGER
 
-from .data import urls
+from .data import urls_to_fetch
 from .tasks import create_tasks
 
 
@@ -30,5 +30,5 @@ async def execute_fetcher_tasks(outfile: AsyncIOFile):
     :param AsyncIOFile outfile: Path of local file to write to.
     """
     async with ClientSession(headers=HTML_HEADERS) as session:
-        task_list = await create_tasks(session, urls, outfile)
+        task_list = await create_tasks(session, urls_to_fetch, outfile)
         await asyncio.gather(*task_list)
