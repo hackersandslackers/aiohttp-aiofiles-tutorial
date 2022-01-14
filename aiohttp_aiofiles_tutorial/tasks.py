@@ -13,7 +13,7 @@ async def create_tasks(
     session: ClientSession, urls: List[str], outfile: AsyncIOFile
 ) -> List[Task]:
     """
-    Create asyncio tasks to execute the `fetch_url_and_save_title` coroutine.
+    Create asyncio tasks to parse HTTP request responses.
 
     :param ClientSession session: Async HTTP requests session.
     :param List[str] urls: Resource URLs to fetch.
