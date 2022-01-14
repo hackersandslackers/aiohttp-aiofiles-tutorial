@@ -22,7 +22,9 @@ async def parse_html_page_data(html: str, url: str) -> str:
             .replace('"', "`")
             .replace("'", "`")
         )
-        primary_tag = soup.head.select_one("meta[property='article:tag']").get("content")
+        primary_tag = soup.head.select_one("meta[property='article:tag']").get(
+            "content"
+        )
         published_at = (
             soup.head.select_one("meta[property='article:published_time']")
             .get("content")

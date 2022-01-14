@@ -9,7 +9,9 @@ from aiohttp import ClientSession
 from .fetcher import fetch_url_and_save_data
 
 
-async def create_tasks(session: ClientSession, urls: List[str], outfile: AsyncIOFile) -> List[Task]:
+async def create_tasks(
+    session: ClientSession, urls: List[str], outfile: AsyncIOFile
+) -> List[Task]:
     """
     Create asyncio tasks to execute the `fetch_url_and_save_title` coroutine.
 
@@ -21,6 +23,8 @@ async def create_tasks(session: ClientSession, urls: List[str], outfile: AsyncIO
     """
     task_list = []
     for i, url in enumerate(urls):
-        task = asyncio.create_task(fetch_url_and_save_data(session, url, outfile, len(urls), i))
+        task = asyncio.create_task(
+            fetch_url_and_save_data(session, url, outfile, len(urls), i)
+        )
         task_list.append(task)
     return task_list

@@ -5,7 +5,9 @@ from logger import LOGGER
 from .parser import parse_html_page_data
 
 
-async def write_to_outfile(html: str, url: str, outfile: AsyncIOFile, total_count: int, i: int):
+async def write_to_outfile(
+    html: str, url: str, outfile: AsyncIOFile, total_count: int, i: int
+):
     """
     Write contents of fetched URL to new file in local directory.
 

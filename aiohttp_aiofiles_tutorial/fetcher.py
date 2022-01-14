@@ -7,7 +7,11 @@ from .writer import write_to_outfile
 
 
 async def fetch_url_and_save_data(
-    session: ClientSession, url: str, outfile: AsyncIOFile, total_count: int, i: int
+    session: ClientSession,
+    url: str,
+    outfile: AsyncIOFile,
+    total_count: int,
+    i: int,
 ):
     """
     Fetch raw HTML from a URL prior to parsing.
