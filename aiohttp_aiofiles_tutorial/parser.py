@@ -1,11 +1,12 @@
 """Parse metadata from raw HTML."""
 from bs4 import BeautifulSoup
+from bs4.builder import ParserRejectedMarkup
 from logger import LOGGER
 
 
-async def parse_html_page_data(html: str, url: str) -> str:
+async def parse_html_page_metadata(html: str, url: str) -> str:
     """
-    Extract page title from raw HTML of fetched URL; return a title
+    Extract page metadata from raw HTML into a CSV row.
 
     :param str html: Raw HTML source of a given fetched URL.
     :param str url: URL associated with the extracted HTML.
@@ -33,6 +34,8 @@ async def parse_html_page_data(html: str, url: str) -> str:
         if primary_tag is None:
             primary_tag = ""
         return f"{title}, {description}, {primary_tag}, {url}, {published_at}"
+    except ParserRejectedMarkup as e:
+        LOGGER.error(f"Failed to parse invalid html for {url}: {e}")
     except ValueError as e:
         LOGGER.error(f"ValueError occurred when parsing html for {url}: {e}")
     except Exception as e:

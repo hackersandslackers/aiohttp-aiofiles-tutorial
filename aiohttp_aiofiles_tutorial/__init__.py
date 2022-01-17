@@ -20,7 +20,9 @@ async def init_script():
         await outfile.write("title,description,primary_tag,url,published_at\n")
         await execute_fetcher_tasks(outfile)
         await outfile.close()
-    LOGGER.success(f"Executed {__name__} in {time.perf_counter() - start_time:0.2f} seconds.")
+    LOGGER.success(
+        f"Executed {__name__} in {time.perf_counter() - start_time:0.2f} seconds."
+    )
 
 
 async def execute_fetcher_tasks(outfile: AsyncIOFile):

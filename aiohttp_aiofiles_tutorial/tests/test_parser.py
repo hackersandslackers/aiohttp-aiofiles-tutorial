@@ -4,7 +4,7 @@ import pytest
 import pytest_asyncio
 from config import BASE_DIR
 
-from aiohttp_aiofiles_tutorial.parser import parse_html_page_data
+from aiohttp_aiofiles_tutorial.parser import parse_html_page_metadata
 
 
 @pytest_asyncio.fixture
@@ -25,6 +25,6 @@ async def test_parse_html_page_data(sample_page_metadata):
     async with aiofiles.open(test_file, mode="r") as file:
         html = await file.read()
         url = "https://hackersandslackers.com/intro-to-asyncio-concurrency/"
-        metadata = await parse_html_page_data(html, url)
+        metadata = await parse_html_page_metadata(html, url)
         assert metadata == sample_page_metadata
         await file.close()
