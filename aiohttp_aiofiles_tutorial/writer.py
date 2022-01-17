@@ -22,4 +22,4 @@ async def write_to_outfile(
         await outfile.write(f"{page_metadata}\n")
         LOGGER.info(f"Fetched URL {i} of {total_count}: {page_metadata}")
     except Exception as e:
-        LOGGER.error(f"Unexpected error while writing page title: {e}")
+        LOGGER.error(f"Unexpected error while writing page metadata: {e}")
