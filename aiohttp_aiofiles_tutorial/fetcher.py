@@ -3,7 +3,7 @@ from aiofiles.threadpool.text import AsyncTextIOWrapper as AsyncIOFile
 from aiohttp import ClientError, ClientSession, InvalidURL
 from logger import LOGGER
 
-from .writer import write_to_outfile
+from .parser import parse_html_page_metadata
 
 
 async def fetch_url_and_save_data(
@@ -27,7 +27,9 @@ async def fetch_url_and_save_data(
             if resp.status != 200:
                 pass
             html = await resp.text()
-            await write_to_outfile(html, url, outfile, total_count, i)
+            page_metadata = await parse_html_page_metadata(html, url)
+            await outfile.write(f"{page_metadata}\n")
+            LOGGER.info(f"Fetched URL {i} of {total_count}: {page_metadata}")
     except InvalidURL as e:
         LOGGER.error(f"Unable to fetch invalid URL `{url}`: {e}")
     except ClientError as e:
