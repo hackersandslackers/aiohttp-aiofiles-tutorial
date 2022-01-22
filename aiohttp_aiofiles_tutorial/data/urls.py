@@ -12,7 +12,7 @@ def parse_urls_from_csv(filepath: str) -> List[str]:
     :returns: List[str]
     """
     urls = []
-    with open(filepath, newline="") as f:
+    with open(filepath, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for line in reader:
             urls.append(line["url"])

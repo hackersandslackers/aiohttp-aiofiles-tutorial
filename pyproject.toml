@@ -53,3 +53,6 @@ src_paths = ["aiohttp_aiofiles_tutorial"]
 
 [tool.black]
 line-length = 80
+
+[tool.pylint.'MESSAGES CONTROL']
+disable="C0103,C0301,W0703,W0621"

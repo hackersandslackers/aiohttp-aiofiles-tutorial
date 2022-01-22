@@ -9,5 +9,5 @@ def test_parse_urls():
 
     urls_to_fetch = parse_urls_from_csv(INPUT_FILEPATH)
 
-    assert (type(urls_to_fetch)) == list
+    assert isinstance(urls_to_fetch, list)
     assert "https://" in urls_to_fetch[0]
