@@ -55,6 +55,7 @@ update:
 	if [ ! -d "./.venv" ]; then python3 -m venv $(VIRTUAL_ENVIRONMENT); fi
 	.venv/bin/python3 -m pip install --upgrade pip setuptools wheel
 	poetry update
+	find . -name 'requirements.txt' -delete
 	poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 

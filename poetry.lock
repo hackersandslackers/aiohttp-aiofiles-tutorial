@@ -544,7 +544,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a87eec118db3a5b8e01b48acd316c422b3a703f14351fea4a989a2bf19cc02d9"
+content-hash = "f99ce3e50c57bbc8f216b802859dea125ba4ce94c9147dc711fe8a96b890d32b"
 
 [metadata.files]
 aiodns = [
