@@ -23,6 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
        make install
+       pip install -r requirements.txt
        pip install flake8 pytest black isort
     - name: Lint with flake8
       run: |
