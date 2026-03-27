@@ -7,7 +7,7 @@ asyncio==3.4.3
 attrs==21.4.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 beautifulsoup4==4.12.2; python_full_version > "3.0.0"
 brotlipy==0.7.0
-bs4==0.0.1
+bs4==0.0.2
 cchardet==2.1.7
 cffi==1.16.0
 charset-normalizer==2.1.1; python_full_version >= "3.5.0" and python_version >= "3.6"
